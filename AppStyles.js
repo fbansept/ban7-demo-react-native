@@ -10,11 +10,16 @@ export default function createStyles() {
     container: {
       flex: 1,
       backgroundColor: colors.backgroundColor,
-
+    },
+    safeArea: {
       paddingTop: insets.top,
       paddingLeft: insets.left,
       paddingBottom: insets.bottom,
       paddingRight: insets.right
+    },
+    centered: {
+      alignItems: "center",
+      justifyContent: "center"
     }
   });
 

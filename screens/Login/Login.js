@@ -7,11 +7,9 @@ const Login = ({ handleLogin }) => {
 
   const styles = { ...AppStyles(), ...LoginStyles() };
 
-  console.log(styles);
-
   return (
-    <View style={styles.container}>
-      <Text>khjhhghgjhhgfjff</Text>
+    <View style={styles.container, styles.centered, styles.safeArea}>
+      <Text>CONNEXION</Text>
     </View>
   );
 };
