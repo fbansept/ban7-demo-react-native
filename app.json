@@ -3,7 +3,7 @@
     "name": "ban7-demo-react-native",
     "slug": "ban7-demo-react-native",
     "version": "1.0.0",
-    "orientation": "portrait",
+    "orientation": "automatic",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "automatic",
     "splash": {
