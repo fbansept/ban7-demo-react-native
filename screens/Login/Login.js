@@ -4,12 +4,11 @@ import LoginStyles from "./LoginStyles";
 import AppStyles from "./../../AppStyles";
 
 const Login = ({ handleLogin }) => {
-
   const styles = { ...AppStyles(), ...LoginStyles() };
 
   return (
-    <View style={styles.container, styles.centered, styles.safeArea}>
-      <Text>CONNEXION</Text>
+    <View style={[styles.container, styles.centered, styles.safeArea]}>
+      <Button onPress={handleLogin} title="CONNEXION"></Button>
     </View>
   );
 };

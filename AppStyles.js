@@ -15,12 +15,12 @@ export default function createStyles() {
       paddingTop: insets.top,
       paddingLeft: insets.left,
       paddingBottom: insets.bottom,
-      paddingRight: insets.right
+      paddingRight: insets.right,
     },
     centered: {
       alignItems: "center",
-      justifyContent: "center"
-    }
+      justifyContent: "center",
+    },
   });
 
   return styles;
