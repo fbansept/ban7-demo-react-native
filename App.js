@@ -14,9 +14,10 @@ import ListeDemande from "./screens/ListeDemande/ListeDemande";
 import Cgu from "./screens/Cgu/Cgu";
 
 export default function App() {
-  const styles = AppStyles();
-
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const Stack = createStackNavigator();
+  const Drawer = createDrawerNavigator();
 
   const handleLogin = async () => {
     try {
@@ -53,6 +54,8 @@ export default function App() {
     );
   };
 
+  //Par la suite ce composant sera un Stack navigator comportant tous les écrans
+  //destinés à la connexion / inscription / mot de passe oublié / OAuth2 ....
   const LoginNavigator = () => {
     return (
       <View style={[styles.container, styles.centered]}>
@@ -62,9 +65,11 @@ export default function App() {
   };
 
   return (
-    <NavigationContainer>
-      <StatusBar style="auto" />
-      {isLoggedIn ? <AppNavigator /> : <LoginNavigator />}
-    </NavigationContainer>
+    <SafeAreaProvider>
+      <NavigationContainer>
+        <StatusBar style="auto" />
+        {isLoggedIn ? <AppNavigator /> : <LoginNavigator />}
+      </NavigationContainer>
+    </SafeAreaProvider>
   );
 }
