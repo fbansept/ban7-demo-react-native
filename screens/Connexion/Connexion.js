@@ -1,13 +1,13 @@
 import ConnexionStyles from "./ConnexionStyles";
 import AppStyles from "../../AppStyles";
-import { Text, View } from "react-native";
+import { Button, View } from "react-native";
 
-export default () => {
+export default ({ handleLogin }) => {
   const styles = { ...AppStyles(), ...ConnexionStyles() };
 
   return (
-    <View style={[styles.container, styles.centered]}>
-      <Text>Connexion</Text>
+    <View style={[styles.container, styles.centered, styles.safeArea]}>
+      <Button onPress={handleLogin} title="CONNEXION"></Button>
     </View>
   );
 };
