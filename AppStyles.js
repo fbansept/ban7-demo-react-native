@@ -31,6 +31,13 @@ export default function AppStyles() {
       padding: 0,
       margin: 0,
     },
+    label: {
+      fontSize: 16,
+      color: "#86939e",
+      fontWeight: "bold",
+      marginBottom: 5,
+      marginLeft: 10,
+    },
   });
 
   return styles;

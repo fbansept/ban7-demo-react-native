@@ -12,9 +12,10 @@ import Cgu from "./screens/Cgu/Cgu";
 import Connexion from "./screens/Connexion/Connexion";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { createStackNavigator } from "@react-navigation/stack";
-import { Header, Icon, SearchBar } from "react-native-elements";
+import { Header, Icon, SearchBar } from "@rneui/themed";
 import AppStyles from "./AppStyles";
 import ListeDemande from "./screens/ListeDemande/ListeDemande";
+import Inscription from "./screens/Inscription/Inscription";
 
 export default () => {
   const App = () => {
@@ -150,11 +151,28 @@ export default () => {
       );
     };
 
-    const LoginNavigator = () => {
-      return <Connexion handleLogin={handleLogin}></Connexion>;
+    const CustomConnexion = () => (
+      <Connexion handleLogin={handleLogin}></Connexion>
+    );
+
+    const StackAuthentification = () => {
+      return (
+        <Stack.Navigator>
+          <Stack.Screen
+            name="Connexion"
+            component={CustomConnexion}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="Inscription"
+            component={Inscription}
+            options={{ headerShown: false }}
+          />
+        </Stack.Navigator>
+      );
     };
 
-    return isLoggedIn ? <AppNavigator /> : <LoginNavigator />;
+    return isLoggedIn ? <AppNavigator /> : <StackAuthentification />;
   };
 
   return (
